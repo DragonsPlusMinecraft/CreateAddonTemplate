@@ -1,23 +1,9 @@
-buildscript {
-    repositories {
-        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-        maven { url = 'https://maven.parchmentmc.org' }
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public' }
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: "${forgegradle_version}", changing: true
-        classpath "org.parchmentmc:librarian:${librarian_version}"
-        classpath "org.spongepowered:mixingradle:${mixingradle_version}"
-    }
+plugins {
+    id 'net.minecraftforge.gradle'
+    id 'org.spongepowered.mixin'
+    id 'org.parchmentmc.librarian.forgegradle'
+    id 'maven-publish'
 }
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
 
 version = mod_version
 group = 'com.example.examplemod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
